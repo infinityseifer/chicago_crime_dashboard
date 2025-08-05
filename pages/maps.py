@@ -6,7 +6,7 @@ st.title("🗺️ Interactive Crime Map")
 
 @st.cache_data
 def load_full():
-    df = pd.read_csv('data/raw/chicago_crime_2001_2025.csv')
+    df = pd.read_csv('data/chicago_crime_cleaned.csv')
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     df = df.dropna(subset=['Latitude', 'Longitude'])
     return df

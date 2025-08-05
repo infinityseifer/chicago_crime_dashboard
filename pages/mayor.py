@@ -12,7 +12,7 @@ def load_summary():
 
 @st.cache_data
 def load_full_data():
-    df = pd.read_csv('data/raw/chicago_crime_2001_2025.csv')
+    df = pd.read_csv('data/chicago_crime_cleaned.csv')
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     df['Arrest'] = df['Arrest'].astype(str)
     return df
